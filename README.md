@@ -42,11 +42,32 @@ To illustrate with a gaming analogy, imagine creating a save point in a game and
 ![areas](https://github.com/AbedSoleymani/Version-Control/assets/72225265/4316bffb-1cd6-482a-8929-62891fac6b26)
 ## Installation (Mac M1)
 Install homebrew by running this in your terminal:
-
+<br>
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
+<br>
 then run this
-
+<br>
 `brew install git`
-
+<br>
 After completing the installation, you should be able to execute `git --version` commands from the command line. If you see the information displayed, it indicates that everything is set up correctly and you're ready to proceed!
+
+Now, we have to configure our git:
+<br>
+`git config --global user.name "<AbedSoleymani>"`
+<br>
+`git config --global user.email "<zsoleymani@ualberta.ca>"`
+<br>
+To make sure that Git output is colored and the Git displays the original state in a conflict, run these commands:
+`git config --global color.ui auto`
+<br>
+`git config --global merge.conflictstyle diff3`
+<br>
+Now, run `git config --list` to see all of your applied configurations.
+<br>
+Since I am using VS Code, I have to get Git working with this particular code editor by running this command:
+<br>
+`git config --global core.editor "code --wait"`
+## Creating a Git repository
+To initialize a new Git repository or reinitialize an existing one in your current working directory within VS Code, execute the command `git init` in the VS Code terminal.
+This command creats a hidden directory called `.git` which serves as the central storage/brain and configuration center for the repository.
+Inside the `.git` directory, you'll find all the necessary files and directories that store configuration settings and maintain a history of commits.
