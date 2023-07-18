@@ -32,3 +32,21 @@ It is important to distinguish the Working Directory from the files that have be
 In the context of Git, the Working Directory is distinct from the command line's notion of the current working directory. The current working directory in the command line represents the directory that your shell is currently focused on.
 5. **Checkout:**
 A checkout occurs when the contents of a repository are copied to the Working Directory, allowing you to access and work with the files locally.
+6. **Staging Index (Staging Area or Index):**
+It is a component within the Git directory that holds important information regarding the content that will be included in your next commit. It can be visualized as a preparation table where Git organizes the upcoming commit. The files residing in the Staging Index are ready to be added to the repository as part of the next commit.
+7. **SHA:**
+A commit's SHA serves as a unique identification number (ID), representing the contents of a file or directory structure in Git. It consists of a 40-character string composed of hexadecimal characters (0-9 and a-f). The SHA, which stands for "Secure Hash Algorithm," is essentially an ID assigned to each commit, enabling precise tracking and referencing of changes made in Git.
+8. **Branch:**
+A branch is created when a new path of code development is established, branching off from the main line of progress. This separate path allows for independent work without affecting the main line.
+To illustrate with a gaming analogy, imagine creating a save point in a game and then attempting a risky move. If the move doesn't yield the desired outcome, you can easily revert back to the save point. The significant advantage of branches lies in their ability to create save points on different paths, enabling you to switch between branches and have distinct save points on each of them. This flexibility amplifies the effectiveness and versatility of branches.
+![areas](https://github.com/AbedSoleymani/Version-Control/assets/72225265/4316bffb-1cd6-482a-8929-62891fac6b26)
+## Installation (Mac M1)
+Install homebrew by running this in your terminal:
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+then run this
+
+`brew install git`
+
+After completing the installation, you should be able to execute `git --version` commands from the command line. If you see the information displayed, it indicates that everything is set up correctly and you're ready to proceed!
