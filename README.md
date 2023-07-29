@@ -99,4 +99,19 @@ The answer to all of these questions is the `git status` command!
 * Untracked files: It shows files in the working directory that Git hasn't started tracking yet. These files are excluded from commits by default.
 * Unstaged changes: It displays modifications made to tracked files that haven't been staged. These changes aren't queued for the next commit.
 
-During initial stages, frequent use of the git status command is highly recommended! It ensures a clear understanding of the repository status.
+During initial stages, frequent use of the `git status` command is highly recommended! It ensures a clear understanding of the repository status.
+
+In addition to `git status`, the `git log` command is used to display a chronological list of commit history in a Git repository. When you run `git log`, it shows a list of commits in reverse chronological order, starting with the most recent commit and going backward in time.
+<br>
+The information displayed by git log typically includes:
+<br>
+1. **Commit Hash:** A unique identifier for each commit.
+2. **Author:** The name and email of the person who made the commit.
+3. **Date:** The date and time when the commit was made.
+4. **Commit Message:** A brief description of the changes made in the commit.
+<br>
+You can navigate between log information by scroling up and down and press `q` to quit out of the log.
+<br>
+While `git log` provides a more detailed and multiline output with commit hashes, author information, dates, and commit messages displayed across multiple lines, `git log --oneline` offers a more condensed view with just the first 7 characters of the commit's SHA and the commit message, all on a single line, making it easier to get an overview of the commit history at a glance.
+
+The `git log` command includes a flag that allows you to view the altered files in a commit, along with the count of inserted and deleted lines. This flag is `--stat` (derived from "statistics"), and you can use it as follows: `git log --stat`.
