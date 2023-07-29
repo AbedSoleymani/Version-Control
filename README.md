@@ -122,6 +122,36 @@ The `git log` command has a flag that can be used to display the actual changes 
 1. displays the files that have been modified
 2. displays the location of the lines that have been added/removed
 3. displays the actual changes that have been made
-<br>
+
+
 One problem here is that we have to scrol a lot through the patch output just to get to the right commit so we could see its info.
 For all of these commands `git log`, `git log --oneline`, `git log --stat`, and `git log --patch`, we can supply the first 7 characters of the SHA of a commit as the final argument and review the info starting at that commit! For example: `git log -p fdf5493`.
+
+Finally, the `git show` command reveals the information about the most recent commit of the author (only one commit) including its author name, date, message, and the patch information. We also can add SHA as the final argument (e.g., `git show fdf5493`) to get access to the information of an specific commit. 
+
+## Adding commits to a repository
+So far, we have learned some foundations about `git` and we can do:
+1. `git init` to create a new repository
+2. `git clone` to copy the existing repository
+3. `git log` to review existing commits
+4. `git status` to get the status of a repository.
+<br> From now on, we will learn to do:
+1. `git add` to add files from the working directory to the staging index
+2. `git commit` to take files from the staging index and save them in our local repository
+3. `git diff` to display the difference between two versions of a file
+
+The `git add` command is used to move files from the Working Directory to the staging index. The command<br>`git add <file1> <file2> … <fileN>`
+<br>takes a space-separated list of file names. Alternatively, the period `.` (i.e., `git add .`) can be used in place of a list of files to tell Git to add the current directory (and all nested files) to the staging index.
+
+Now, to create a new commit with a specified commit message, we use this command:<br>
+`git commit -m "commit message"`<br>
+A good commit message is short (less than 60-ish characters) and explains what the commit does (not how or why!).
+A good commit message does not explain why the changes are made or does not explain how the changes are made (that's what `git log -p` is for!).<br>
+**IMPORTANT** Do not use the word "and"! If you have to use "and", your commit message is probably doing too many changes. In this situation, it is professional to break the changes into separate commits to have a better track of your code for your future purposes.<br>
+Good commit messages:
+* `"Implemented fib(num) function to calculate Fibonacci sequence"`
+* `"Fixed issue XYZ: Incorrect output data type"`
+
+Bad commit messages:
+* `"Updating main.py"`
+* `"Fixed issue XYZ`
