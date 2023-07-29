@@ -155,3 +155,20 @@ Good commit messages:
 Bad commit messages:
 * `"Updating main.py"`
 * `"Fixed issue XYZ`
+
+To grasp the purpose and significance of the `git diff` command, let's consider a scenario where you begin working on the next feature of your project at night but leave it unfinished before going to bed.
+As a result, when you resume work the next day, there are changes in your code that haven't been committed yet.
+This is understandable since you haven't completed the new feature, but now you face the challenge of recalling precisely what modifications you made since your last commit.
+Although `git status` informs you about the altered files, it doesn't provide details regarding the actual content of those changes.
+The `git diff` command can be used to see changes that have been made but haven't been committed, yet.<br>
+To recap, `git diff` displays:
+1. the files that have been modified
+2. the location of the lines that have been added/removed
+3. the actual changes that have been made
+
+Now, let's assume you add a file, like a Word document, to your project's directory, but you don't want it to be added to the repository. The issue that arises here is that when you use `git add .`, it includes all files, and the Word document might accidentally be committed to the repository. To avoid this situation and keep the file within your project's directory structure without accidentally committing it, you can use a specially named file called `.gitignore` (note the dot at the beginning; it's essential!). You need to place this `.gitignore` file in the same directory as the hidden `.git` directory.
+
+In the `.gitignore` file, you simply list the names of files that you want Git to ignore and not track. Git recognizes the contents of a file with the name `.gitignore`, and when it finds `project.docx` listed in it, it automatically ignores that file. Consequently, the ignored file won't be displayed in the output of `git status`. This way, you can maintain files in your project without worrying about them accidentally becoming part of the repository.
+
+Suppose you add 50 images to your project, but you want Git to disregard all of them. Does this imply that you have to individually list each filename in the `.gitignore` file? Not at all! That would be quite overwhelming! Instead, you can employ a technique known as "globbing". Globbing allows you to utilize special characters to match patterns or characters. Therefore, if all the 50 images are JPEG images located in the "`images`" folder, you can add the following line to `.gitignore`, and Git will ignore all 50 images: `images/*.jpg`
+
