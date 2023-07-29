@@ -115,3 +115,13 @@ You can navigate between log information by scroling up and down and press `q` t
 While `git log` provides a more detailed and multiline output with commit hashes, author information, dates, and commit messages displayed across multiple lines, `git log --oneline` offers a more condensed view with just the first 7 characters of the commit's SHA and the commit message, all on a single line, making it easier to get an overview of the commit history at a glance.
 
 The `git log` command includes a flag that allows you to view the altered files in a commit, along with the count of inserted and deleted lines. This flag is `--stat` (derived from "statistics"), and you can use it as follows: `git log --stat`.
+It would be awesome if we could see exactly _what_ those changes were.
+The `git log` command has a flag that can be used to display the actual changes made to a file. The flag is `--patch` which can be shortened to just `-p`.
+<br>
+`git log --patch` or `git log -p`
+1. displays the files that have been modified
+2. displays the location of the lines that have been added/removed
+3. displays the actual changes that have been made
+<br>
+One problem here is that we have to scrol a lot through the patch output just to get to the right commit so we could see its info.
+For all of these commands `git log`, `git log --oneline`, `git log --stat`, and `git log --patch`, we can supply the first 7 characters of the SHA of a commit as the final argument and review the info starting at that commit! For example: `git log -p fdf5493`.
