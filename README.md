@@ -172,3 +172,5 @@ In the `.gitignore` file, you simply list the names of files that you want Git t
 
 Suppose you add 50 images to your project, but you want Git to disregard all of them. Does this imply that you have to individually list each filename in the `.gitignore` file? Not at all! That would be quite overwhelming! Instead, you can employ a technique known as "globbing". Globbing allows you to utilize special characters to match patterns or characters. Therefore, if all the 50 images are JPEG images located in the "`images`" folder, you can add the following line to `.gitignore`, and Git will ignore all 50 images: `images/*.jpg`
 
+## Tagging, Branching, and Merging
+The `git tag` command adds tag to specific commits. The tag is an extra label for commits which indicate useful information.
